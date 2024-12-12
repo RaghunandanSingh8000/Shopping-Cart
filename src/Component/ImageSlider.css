@@ -1,0 +1,66 @@
+.image-slider {
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+.image-slider img {
+    width: 80%;
+    height: 50%;
+    /* height: 300px; Set a fixed height for all images */
+    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
+    display: none;
+    margin: auto;
+
+}
+
+.image-slider img.active {
+    display: block;
+}
+
+.image-slider .prev, .image-slider .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.image-slider .prev {
+    left: 10px;
+}
+
+.image-slider .next {
+    right: 10px;
+}
+
+.image-slider .dots {
+    text-align: center;
+    padding: 10px;
+    background: #f2f2f2;
+    border-radius: 10px;
+}
+
+.image-slider .dots span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.image-slider .dots span.active {
+    background-color: #717171;
+}

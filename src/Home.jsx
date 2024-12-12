@@ -3,8 +3,7 @@ import './Home.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import ProductList from './ProductList';
-import ImageSlider from './ImageSlider';
+import ImageSlider from './Component/ImageSlider';
 
 const Home = ({ addToCart }) => {
     const [cart, setCart] = useState([]);
