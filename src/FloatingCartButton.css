@@ -1,0 +1,31 @@
+.floating-cart-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    background-color: #ff5722;
+    color: white;
+    border-radius: 50%;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.floating-cart-button:hover {
+    background-color: #e64a19;
+}
+
+.cart-badge {
+    background: red;
+    border-radius: 50%;
+    padding: 2px 8px;
+    color: white;
+    font-size: 14px;
+    position: absolute;
+    top: -10px;
+    right: -10px;
+}

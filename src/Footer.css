@@ -1,0 +1,88 @@
+.footer {
+    padding: 20px;
+    background-color: #222; /* Dark background for contrast */
+    color: #fff;            /* Light text for readability */
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap;       /* Ensures sections stack on smaller screens */
+    justify-content: space-between;
+    gap: 20px;             /* Space between sections */
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.footer-sections div {
+    flex: 1 1 calc(33.33% - 20px); /* Makes sections flexible for different screen sizes */
+    min-width: 250px;
+    max-width: 400px;
+}
+
+.footer-sections h4 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #f0a500;        /* Highlighted title color */
+}
+
+.footer-sections p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #ddd;
+}
+
+.footer-sections a {
+    color: #1da1f2;
+    text-decoration: none;
+}
+
+.footer-sections a:hover {
+    text-decoration: underline;
+}
+
+.footer-contact a {
+    color: #f0a500;
+}
+
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    color: #1da1f2; /* Twitter blue effect */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-sections div {
+        max-width: 100%;
+    }
+
+    .footer-social {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
