@@ -8,9 +8,12 @@ import ProductList from './ProductList';
 import ProductDetails from './ProductDetails';
 import FloatingCartButton from './FloatingCartButton'; // Import the FloatingCartButton component
 import './App.css';
+import SignIn from './Component/SignIn';
 
 function App() {
     const [cart, setCart] = useState([]);
+    const [notification, setNotification] = useState(''); // State for notification message
+    const [isSignedIn, setIsSignedIn] = useState(false); // State to track sign-in status
 
     // Update item quantity in the cart
     const updateQuantity = (productId, newQuantity) => {
@@ -29,7 +32,11 @@ function App() {
 
     // Add a product to the cart
     const addToCart = (product) => {
-        
+        if (!isSignedIn) {
+            alert('Please sign in to add products to the cart.');
+            return;
+        }
+
         const existingItem = cart.find(item => item.id === product.id);
         if (existingItem) {
             setCart(cart.map(item =>
@@ -38,6 +45,8 @@ function App() {
         } else {
             setCart([...cart, { ...product, quantity: 1 }]);
         }
+        setNotification(`${product.name} has been added to the cart!`); // Set notification message
+        setTimeout(() => setNotification(''), 3000); // Clear notification after 3 seconds
     };
 
     // Calculate the total price of the cart
@@ -45,17 +54,18 @@ function App() {
         return cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2);
     };
 
-   
     return (
         <Router>
             <div className="app-container">
                 <Header cartItemCount={cart.length} />
                 <main className="main-content">
+                    {notification && <div className="notification">{notification}</div>} {/* Display notification */}
                     <Routes>
                         <Route path="/" element={<Home addToCart={addToCart} />} />
                         <Route path="/products" element={<ProductList addToCart={addToCart} clearCart={clearCart} />} />
                         <Route path="/products/:id" element={<ProductDetails addToCart={addToCart} />} />
                         <Route path="/cart" element={<Cart cart={cart} updateQuantity={updateQuantity} removeFromCart={removeFromCart} clearCart={clearCart} calculateTotal={calculateTotal} />} />
+                        <Route path="/signin" element={<SignIn setIsSignedIn={setIsSignedIn} />} /> {/* Pass setIsSignedIn to SignIn */}
                     </Routes>
                 </main>
                 <Footer />

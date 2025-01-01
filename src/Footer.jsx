@@ -24,8 +24,8 @@ const Footer = () => {
                         <h4>Terms & Conditions</h4>
                         <p>
                             By using our shopping cart, you agree to our policies regarding order processing, payments, 
-                            and returns. Please ensure that your cart items are reviewed before checkout. For more details, 
-                            visit our  page.
+                            and returns. Please ensure that your cart items are reviewed before checkout.
+                
                         </p>
                     </div>
                     <div className="footer-contact">

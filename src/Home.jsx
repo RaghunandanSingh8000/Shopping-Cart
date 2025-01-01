@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import ImageSlider from './Component/ImageSlider';
+import { height, width } from '@fortawesome/free-solid-svg-icons/fa0';
 
 const Home = ({ addToCart }) => {
     const [cart, setCart] = useState([]);
@@ -15,25 +16,22 @@ const Home = ({ addToCart }) => {
     };
 
     const images = [
-        '/laptop.jpeg',
-        '/HeadPhone.jpeg',
-        '/Tablet.jpeg',
-        '/Smartphone.jpeg',
-        '/SmartWatch.jpeg',
-        '/Camera.jpeg',
-        '/Television.jpeg',
-        '/Earbuds.jpeg'
+        "/Slide1.jpg ",
+        "/Slide2.jpg",
+        "/Slide3.png",
+        "/Slide8.jpg",
+        "/Slide4.jpg"
     ];
 
     const products = [
-        { id: 1, name: "Laptop", price: 1200, img: "/laptop.jpeg" },
-        { id: 2, name: "Headphone", price: 200, img: "/HeadPhone.jpeg" },
-        { id: 3, name: "Tablet", price: 450, img: "/Tablet.jpeg" },
-        { id: 4, name: "Smartphone", price: 700, img: "/Smartphone.jpeg" },
-        { id: 5, name: "Smartwatch", price: 300, img: "/SmartWatch.jpeg" },
-        { id: 6, name: "Camera", price: 500, img: "/Camera.jpeg" },
-        { id: 7, name: "Television", price: 1000, img: "/Television.jpeg" },
-        { id: 8, name: "Earbuds", price: 100, img: "/Earbuds.jpeg" }
+        { id: 1, name: "Laptop", price: 1200, img: "/laptop.jpg"},
+        { id: 2, name: "Headphone", price: 200, img: "/HeadPhone.jpg" },
+        { id: 3, name: "Tablet", price: 450, img: "/Tablet.jpg" },
+        { id:10 , name: "PowerBank", price: 75, img: "/PowerBank.jpg" },
+        {id:13, name: "Speaker", price: 100, img: "/Speaker.jpg" },
+        { id: 6, name: "Camera", price: 500, img: "/Camera.jpg" },
+        { id: 7, name: "Television", price: 1000, img: "/Television.jpg" },
+        { id: 8, name: "Earbuds", price: 100, img: "/Earbuds.jpg" }
     ];
 
     return (
@@ -42,7 +40,7 @@ const Home = ({ addToCart }) => {
                 <section id="home">
                     <h1>Welcome to Shopc@rt</h1>
                     <ImageSlider images={images} /> {/* Pass the images array as a prop */}
-                    <p>Browse our products and add them to your cart!</p>
+                    <p>Browse our products and add them to your cart !</p>
                     <Link to="/products">
                         <button className="shop-button">Start Shopping</button>
                     </Link>
@@ -52,7 +50,9 @@ const Home = ({ addToCart }) => {
                     <div className="product-grid">
                         {products.slice(0, 8).map((product) => (
                             <div className="product" key={product.id}>
+                                <div className="product-img">
                                 <img src={product.img} alt={product.name} />
+                                </div>
                                 <h3>{product.name}</h3>
                                 <p>${product.price}</p>
                                 <button onClick={() => handleAddToCart(product)}>Add to Cart</button>

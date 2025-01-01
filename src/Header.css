@@ -16,7 +16,6 @@
     height: 50px;
     margin-right: 10px;
     border-radius: 50%;
-
 }
 
 nav {
@@ -67,4 +66,46 @@ nav ul li a:hover {
 
 .cart-icon span {
     margin-left: 5px;
+}
+
+.hamburger-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger-button {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.open {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .cart-icon {
+        margin-left: 0;
+        margin-top: 10px;
+    }
 }

@@ -1,6 +1,6 @@
 .image-slider {
     position: relative;
-    max-width: 600px;
+    max-width: 100%;
     width: 100%;
     margin: auto;
     overflow: hidden;
@@ -11,13 +11,11 @@
 }
 
 .image-slider img {
-    width: 80%;
-    height: 50%;
-    /* height: 300px; Set a fixed height for all images */
+    width: 100%; /* Ensure the image takes up the full width of the container */
+    height: 400px; /* Set a fixed height for all images */
     object-fit: cover; /* Maintain aspect ratio and cover the entire area */
     display: none;
     margin: auto;
-
 }
 
 .image-slider img.active {
@@ -63,4 +61,43 @@
 
 .image-slider .dots span.active {
     background-color: #717171;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .image-slider {
+        max-width: 100%;
+    }
+
+    .image-slider img {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .image-slider .prev, .image-slider .next {
+        padding: 8px;
+    }
+
+    .image-slider .dots span {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-slider {
+        max-width: 100%;
+    }
+
+    .image-slider img {
+        height: 200px; /* Adjust height for smaller screens */
+    }
+
+    .image-slider .prev, .image-slider .next {
+        padding: 6px;
+    }
+
+    .image-slider .dots span {
+        width: 10px;
+        height: 10px;
+    }
 }
