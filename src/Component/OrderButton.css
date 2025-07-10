@@ -1,0 +1,57 @@
+/* Styling for the Order Button */
+button {
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Full width for smaller screens */
+    max-width: 300px; /* Limit the width on larger screens */
+    margin: 10px auto; /* Center the button */
+    display: block; /* Ensure the button is block-level */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+button:active {
+    background-color: #003f7f; /* Even darker blue on click */
+    transform: scale(0.98); /* Slightly shrink the button on click */
+}
+
+button:disabled {
+    background-color: #cccccc; /* Gray color for disabled state */
+    cursor: not-allowed;
+}
+.order-button:hover {
+    background-color: #0056b3;
+}
+
+.order-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.order-button.loading {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    button {
+        font-size: 18px; /* Larger font size for tablets and above */
+        padding: 12px 24px; /* Adjust padding for larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    button {
+        font-size: 20px; /* Even larger font size for desktops */
+        padding: 14px 28px; /* Adjust padding for desktops */
+    }
+}

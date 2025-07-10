@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProductCart.css';
 
-const ProductCart = ({ product, onAddToCart }) => {
+const ProductCart = ({ product, onAddToCart, isLiked, onToggleLike }) => {
     return (
         <div className="product-cart">
             <Link to={`/products/${product.id}`}>
@@ -13,7 +13,10 @@ const ProductCart = ({ product, onAddToCart }) => {
             </h2>
             <p>{product.description}</p>
             <p>${product.price}</p>
-            <button onClick={() => onAddToCart(product)}>Add to Cart</button>
+            <div className="product-actions">
+                <button onClick={() => onAddToCart(product)}>Add to Cart</button>
+              
+            </div>
         </div>
     );
 };

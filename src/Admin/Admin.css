@@ -1,0 +1,157 @@
+/* Admin Panel Styling */
+.admin-panel {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.manage-products,
+.manage-users {
+    margin-top: 30px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Add/Edit Product Form */
+.add-edit-product input,
+.add-edit-product textarea {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    width: 100%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.add-edit-product button {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.add-edit-product .cancel-button {
+    background-color: #f44336;
+}
+
+.add-edit-product button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+
+.add-edit-product .cancel-button:hover {
+    background-color: #e53935;
+}
+
+/* Product List */
+.product-list ul,
+.manage-users ul {
+    list-style: none;
+    padding: 0;
+}
+
+.product-list li,
+.manage-users li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-list button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.product-list button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Product Image Styling */
+.product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .admin-panel {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .add-edit-product input,
+    .add-edit-product textarea {
+        max-width: 100%;
+    }
+
+    .product-list li,
+    .manage-users li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-list button {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .add-edit-product button {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .product-image {
+        width: 40px;
+        height: 40px;
+    }
+}

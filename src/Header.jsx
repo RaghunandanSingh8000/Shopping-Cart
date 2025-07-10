@@ -6,6 +6,7 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
 function Header({ cartItemCount }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);

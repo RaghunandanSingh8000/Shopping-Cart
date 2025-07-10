@@ -42,6 +42,9 @@ const Footer = () => {
                     ))}
                 </nav>
             </div>
+            <div className="footer-bottom">
+                <p>&copy; {new Date().getFullYear()} ShopCart. All rights reserved.</p>
+            </div>
         </footer>
     );
 };

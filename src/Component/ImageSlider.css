@@ -1,3 +1,4 @@
+/* ImageSlider.css */
 .image-slider {
     position: relative;
     max-width: 100%;
@@ -9,20 +10,19 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     box-sizing: border-box;
 }
-
 .image-slider img {
-    width: 100%; /* Ensure the image takes up the full width of the container */
-    height: 400px; /* Set a fixed height for all images */
-    object-fit: cover; /* Maintain aspect ratio and cover the entire area */
-    display: none;
-    margin: auto;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none; /* Hide all images by default */
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
 }
-
 .image-slider img.active {
-    display: block;
+    display: block; /* Show the active image */
+    opacity: 1; /* Ensure the active image is fully opaque */
 }
-
-.image-slider .prev, .image-slider .next {
+.image-slider .prev,
+.image-slider .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -32,72 +32,70 @@
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 10;
 }
-
 .image-slider .prev {
     left: 10px;
 }
-
 .image-slider .next {
     right: 10px;
 }
-
+.image-slider .prev:hover,
+.image-slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
 .image-slider .dots {
     text-align: center;
-    padding: 10px;
-    background: #f2f2f2;
-    border-radius: 10px;
+    padding: 10px 0;
 }
-
 .image-slider .dots span {
     display: inline-block;
-    width: 15px;
-    height: 15px;
+    width: 10px;
+    height: 10px;
     margin: 0 5px;
     background-color: #bbb;
     border-radius: 50%;
     cursor: pointer;
 }
-
 .image-slider .dots span.active {
     background-color: #717171;
 }
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .image-slider {
-        max-width: 100%;
-    }
-
-    .image-slider img {
-        height: 300px; /* Adjust height for smaller screens */
-    }
-
-    .image-slider .prev, .image-slider .next {
-        padding: 8px;
-    }
-
-    .image-slider .dots span {
-        width: 12px;
-        height: 12px;
-    }
+.image-slider .dots span:hover {
+    background-color: #717171;
 }
-
-@media (max-width: 480px) {
-    .image-slider {
-        max-width: 100%;
-    }
-
-    .image-slider img {
-        height: 200px; /* Adjust height for smaller screens */
-    }
-
-    .image-slider .prev, .image-slider .next {
-        padding: 6px;
-    }
-
-    .image-slider .dots span {
-        width: 10px;
-        height: 10px;
-    }
+.image-slider .caption {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
 }
+.image-slider .caption h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+.image-slider .caption p {
+    margin: 5px 0 0;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+.image-slider .caption a {
+    color: #4caf50;
+    text-decoration: none;
+    font-weight: bold;
+}
+.image-slider .caption a:hover {
+    text-decoration: underline;
+}
+.image-slider .caption a:visited {
+    color: #4caf50;
+}
+.image-slider .caption a:active {
+    color: #388e3c;
+}
+.image-slider .caption a:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.5);
+}   

@@ -69,6 +69,15 @@
 .social-icon:hover {
     color: #1da1f2; /* Twitter blue effect */
 }
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #aaa;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
